@@ -1,0 +1,36 @@
+import 'packages:/flutter/material.dart';
+
+void main(){
+  runApp(MyApp)
+}
+
+class MyApp extends Stateless Widget{
+  @override
+  Widget build(BuildContext context){
+  	return Scaffold(
+      appBar: AppBar(
+        title: Text('Navigation'),
+      ),
+	  body: SingleChildScrollView(
+	  	child: Column(
+			children: <Widget>[
+				Text("Navigation",style:TextStyle(fontSize: 24)),
+				SizedBox(
+					height: 40,
+				),
+				RaisedButton(
+					child: Text("Navigate"),
+					onPressed: (){
+					Navigator.push(
+						context,
+   						MaterialPageRoute(
+						builder: (context) => /*YourRouteNameHere*/()
+						),
+					);
+					}),
+				)
+			],
+		),
+	  ),
+  }
+}
